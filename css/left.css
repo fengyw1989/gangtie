@@ -1,0 +1,39 @@
+* { margin: 0; padding: 0; font-family: "Microsoft YaHei",微软雅黑,"SimHei"; }
+html,body { font-size: 16px; height: 100%; }
+body { background-color: #eeeeee; }
+a{ text-decoration:none; }
+.navBox { width: 120px; height: 100%; background-color: #1b1b1b; text-align: center; }
+.navBox .nav { cursor: pointer; width: 100%; height: 105px; display: table;  color: #ffffff;  border-bottom: 1px solid #4d4c51;  }
+.nav .nav-wrap { display: table-cell; vertical-align: middle; }
+.nav .nav-wrap .img { width: 35px; height: 35px; display: inline-block; background-image: url(../images/head-nav-icon.png); background-repeat: no-repeat;}
+.navBox .index-content .img { height:35px;width:38px; background-position:-301px 0; }
+.navBox .environment .img { height:34px;width:34px;background-position:-163px 0; }
+.navBox .marketing .img { height:34px;width:34px;background-position:-197px 0; }
+.navBox .warning .img { height:34px;width:35px;background-position:-266px 0; }
+.navBox .emphases .img { height:34px;width:31px;background-position:-64px 0;}
+
+.navBox .index-content:hover .img,.navBox .hover .index-content .img { height:35px;width:38px;background-position:-339px 0; }
+.navBox .environment:hover .img,.navBox .hover .environment .img { height:34px;width:34px;background-position:-95px 0; }
+.navBox .marketing:hover .img,.navBox .hover .marketing .img { height:34px;width:34px;background-position:-129px 0; }
+.navBox .warning:hover .img,.navBox .hover .warning .img {height:31px;width:35px;background-position:-231px 0;}
+.navBox .emphases:hover .img,.navBox .hover .emphases .img { height:34px;width:31px;background-position:-33px 0;}
+
+
+.nav-wrap p { margin-top: 5px; font-size: 14px; }
+
+
+.navBox .nav:hover, .navBox .hover{ position: relative; background-color: #e91108; }
+.navBox .nav:hover:before,.hover:before{
+	content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #e91108;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: -20px;
+}
+

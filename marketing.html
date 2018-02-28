@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>钢铁供应链金融大数据</title>
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/marketing.css">
+</head>
+<body>
+	<div class="content-box">
+		<div class="content-wrap">
+			<h3>企业指南针</h3>
+			<div class="chart-box">
+				<div id="map1" style="width: 500px; height: 360px"></div>
+			</div>
+		</div>
+		<div class="content-wrap ">
+			<h3>供应链探测仪</h3>
+			<div class="chart-box">
+				<div id="chart-2" style="width: 500px; height: 360px;"></div>
+			</div>
+		</div>
+		<div class="content-wrap">
+			<h3>客户漏斗</h3>
+			<div class="chart-box">
+				<div id="chart-3" style="width: 500px; height: 360px;"></div>
+			</div>
+		</div>
+		<div class="content-wrap">
+			<h3>结果显示区</h3>
+			<div class="chart-box" id="result-show">
+				<!-- Swiper -->
+				<p class="total">资金缺口14家</p>
+			    <div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide">
+			            	<div class="comp-list">
+			            	<p class="comp-row"><a href="details/index.html" target="view_window"><span class="comp-name">上海宏冶</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海恒钢</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海豪进</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海华冶</span></a>
+			            	<p class="comp-row"><a href="details/index.html" target="view_window"><span class="comp-name">上海广和</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海贯众</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海钢宇</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海钢锋</span></a>
+			            	<p class="comp-row"><a href="details/index.html" target="view_window"><span class="comp-name">上海宝闽</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海博源</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海博丰</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海宝就</span></a>
+			            	<p class="comp-row"><a href="details/index.html" target="view_window"><span class="comp-name">上海宝夏</span></a><a href="details/index.html" target="view_window"><span class="comp-name">上海宝旺</span></a></p>
+			            </div></div>
+			        </div>
+			        <!-- Add Pagination -->
+			        <!-- <div class="page-list">
+				        <div class="swiper-button-prev swiper-pagination-bullet"><</div>
+				        	<div class="swiper-pagination">1</div>
+				        <div class="swiper-button-next swiper-pagination-bullet">></div>
+			        </div> -->
+			        <!-- Add Arrows -->
+			        <!-- <div class="swiper-button-next swiper-pagination-bullet">></div> -->
+			        <!-- <div class="swiper-button-prev swiper-pagination-bullet"><</div> -->
+			    </div>
+			    <!-- Swiper -->
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/classLib/jquery.min.js"></script>
+<script type="text/javascript" src="js/classLib/es5-array.js"></script>  
+<script type="text/javascript" src="js/classLib/swiper.min.js"></script>
+<script>
+swiper();
+function swiper(){
+	var swiper = new Swiper('.swiper-container', {
+	    pagination: '.swiper-pagination',
+	    paginationClickable: true,
+	    nextButton: '.swiper-button-next',
+	    prevButton: '.swiper-button-prev',
+	    loop:false,
+	    noSwiping : true,
+		noSwipingClass : 'swiper-slide',
+	    paginationBulletRender: function (index, className) {
+	    	alert(className);
+	        return '<span class="' + className + '">' + (index + 1) + '</span>';
+	    }
+	});
+}
+</script>
+<script type="text/javascript" src="js/classLib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/china.js"></script>
+<script type="text/javascript">
+//热点案例
+	var swiper = new Swiper('.swiper-container', {
+	    pagination : '.pagination',
+	    autoplay : 3000,
+	    loop:true
+	});
+
+	$('.swiper-button-prev').click(function(){
+	    swiper.swipePrev(); 
+	});
+	$('.swiper-button-next').click(function(){
+	    swiper.swipeNext(); 
+	});
+</script>
+<script src="echarts-2.2.7/build/dist/echarts.js"></script>
+<script type="text/javascript" src="js/chart3.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/main.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/main2.js"></script>
+<script>
+	createSankey("chart-2");
+	createFunnel("chart-3");
+</script>
+
+</html>

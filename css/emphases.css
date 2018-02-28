@@ -1,0 +1,209 @@
+* { margin: 0; padding: 0; font-family: "SimHei","Microsoft YaHei",微软雅黑; }
+html,body { font-size: 16px; }
+body { background-color: #eeeeee; padding: 15px; padding-top: 30px; }
+ul li { list-style-type:none; }
+.L { float: left; }
+.R { float: right; }
+
+.content-box { 
+    border: 1px solid #cccccc;
+    padding: 1.5% 15px 35px 1.5%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.aui-tab {
+    display: -webkit-box;display: -webkit-flex;display: flex;-webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;-webkit-align-self: center; align-self: center;position: relative;
+    display: block; overflow: hidden;
+}
+.aui-tab-item.aui-active {
+    color: #ffffff;background-color: #d40a02;border-color: #d40a02;z-index: 100;
+}
+.aui-tab-item {float: left;
+	cursor: pointer;min-width: 105px;height: 30px;line-height: 30px;padding: 0 20px;
+    margin-right: 8px;position: relative;overflow: hidden;font-size: 16px;text-align: center;color: #000;
+    border: 1px solid #c4c4c4;border-bottom: 0;background-color: #ffffff;-webkit-box-flex: 1;box-flex: 1;
+}
+
+.trading-volume-map { display: inline-block;width: 97%; }
+.trading-volume-map .content_a{padding-bottom: 30px;}
+.trading-volume-map .content_b{padding-top: 20px;}
+.content-box-title { position: relative; }
+.content-box-title .select {  
+	width: 220px; padding:5px 10px; border-radius: 5px; outline:none; font-size: 14px; position: absolute; left: 0;
+}
+.content-box h3 {
+    border-bottom: 2px solid #e21b10;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-weight: 100;
+}
+.font_red{color: #df1b10}
+.ep_table{
+    width: 100%;
+    border: solid 1px #e1e1e1;
+    margin-left: 1%;
+    margin-right: 1%;
+    overflow: hidden;
+}
+.yg_table{
+    width: 101%;
+    height: 101%;
+}
+.yg_table thead{
+    background: #f5f5f5;
+}
+.yg_table tbody tr:even{
+    background: #fcfcfc;
+}
+.yg_table tbody tr td,.yg_table thead th{
+    border-bottom: solid 1px #e1e1e1;
+    border-right: solid 1px #e1e1e1;
+    text-align: center;
+    padding: 10px 0px;
+}
+.yg_table .title td{
+    font-size: 20px;
+    font-weight:800;
+}
+.y_page{
+    width: 160px;
+    height: 20px;
+    display: block;
+    text-align: center;
+    float: right;
+}
+.y_page span{
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 12px;
+    color: #1F1D1D;
+    margin-right: 2px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px #E8E8E8;
+    display: inline-block;
+    line-height: 18px !important;
+    background: #fff;
+}
+.y_page span.y_bg_red{
+    border: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    background: #ff7c6d;
+}
+.y_page .end:hover{
+    color: #b7b7b7;
+    cursor: default;
+    border: solid 1px #E8E8E8;
+}
+.y_page span:hover{
+    border: solid 1px #ff7c6d;
+    display: inline-block;
+    color: #4c4a4a;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    background: #fff;
+}
+.searchLab{
+    width: 800px;
+}
+.active{
+    color: #fff;
+    background: #d40a02;
+}
+.searchLab .enterp,.searchLab .more{
+    display: inline-block;
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    border: solid 1px #E8E8E8;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.ep_search{
+    border-radius: 5px;
+    width: 150px;
+}
+.ep_search{
+    display: inline-block;
+    border: solid 1px #E8E8E8;
+    height: 30px;
+    background: grey;
+    position: relative;
+}
+.ep_search input{
+    height: 100%;
+    width: 140px;
+}
+.ep_search .icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    background: url("../images/search.png") no-repeat;
+}
+.des_lab{
+    width: 593px;
+    margin-left: 128px;
+    margin-top: 10px;
+    border: solid 1px #E8E8E8;
+    padding: 0 20px;
+}
+.des_lab .enterp{
+    display: inline-block;
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+    border: solid 1px #E8E8E8;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.content_b .page-box{
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

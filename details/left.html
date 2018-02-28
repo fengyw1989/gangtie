@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>钢铁供应链金融大数据</title>
+	<link rel="stylesheet" type="text/css" href="css/left.css">
+</head>
+<body>
+	<div class="navWrap">
+		<h4>栏目导航</h4>
+		<a class="nav hover" href="index-content.html#basic-info" target="details-main">
+			<div id="basic-info" class="nav-wrap">
+				<p>企业基本信息</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#credit-describe" target="details-main">
+			<div id="credit-describe" class="nav-wrap">
+				<p>信贷风险描述</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#enterp-trade-info" target="details-main">
+			<div id="enterp-trade-info" class="nav-wrap">
+				<p>企业交易信息</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#enterp-credit-record" target="details-main">
+			<div id="enterp-credit-record" class="nav-wrap">
+				<p>企业信贷记录</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#person-status" target="details-main">
+			<div id="person-status" class="nav-wrap">
+				<p>企业人员状况</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#finance-info" target="details-main">
+			<div id="finance-info" class="nav-wrap">
+				<p>企业财务信息</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#payTaxes-info" target="details-main">
+			<div id="payTaxes-info" class="nav-wrap">
+				<p>企业纳税信息</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#pay-ability" target="details-main">
+			<div id="pay-ability" class="nav-wrap">
+				<p>偿债能力分析</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#profit-ability" target="details-main">
+			<div id="profit-ability" class="nav-wrap">
+				<p>盈利能力分析</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#qualifi-info" target="details-main">
+			<div id="qualifi-info" class="nav-wrap">
+				<p>企业资质信息</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#credit-eval" target="details-main">
+			<div id="credit-eval" class="nav-wrap">
+				<p>企业信用评价</p>
+			</div>
+		</a>
+		<a class="nav" href="index-content.html#consensus-eval" target="details-main">
+			<div id="consensus-eval" class="nav-wrap">
+				<p>企业舆情评价</p>
+			</div>
+		</a>
+	</div>
+</body>
+<script type="text/javascript" src="../js/classLib/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.nav').click(function(){
+			$('.nav').removeClass('hover');
+			$(this).addClass('hover');
+		});
+	})
+
+	function scrolls(id){
+		//console.log(id);
+		$('.nav').removeClass('hover');
+		$(id).parent('a').addClass('hover');
+	}
+</script>
+</html>

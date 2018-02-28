@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>钢铁供应链金融大数据</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/environment.css">
+</head>
+<body>
+    <div class="aui-tab" id="tab">
+        <div class="aui-tab-item aui-active">市场交易</div>
+        <div class="aui-tab-item">舆情</div>
+        <div class="aui-tab-item">细分-采集与冶炼</div>
+        <div class="aui-tab-item">细分-钢材成品</div>
+        <div class="aui-tab-item">细分-下游消费</div>
+    </div>
+    <!-- 市场交易 -->
+	<div class="content-box">
+		<!-- 交易额地图 -->
+		<div class="trading-volume-map">
+			<div class="content-box-title">
+				<span>宏观 - 重点钢企交易态势</span>
+				<div id="trade-form" class="h25w110"></div>
+			</div>
+			<div id="tradingTrendMap" style="width: 540px;height:430px;"></div>
+		</div>
+		<!-- 交易额地图 end -->
+
+		<div class="column-box R">
+			<ul>
+				<li>交易额</li>
+				<li class="trade">
+					<div class="money">
+						<p class="total">交易总额:<span class="num" id="TF">100</span>亿元</p>
+						<p class="decline R" id="TFr">下降<span class="num" >1.8%</span></p>
+					</div>
+					<div class="comp">
+						<p class="up">上涨企业数 : <span class="num" id="U">295</span>家<i class="Up"></i></p>
+						<p class="down">下降企业数 : <span class="num" id="D">495</span>家<i class="Down"></i></p>
+					</div>
+				</li>
+			</ul>
+			<ul>
+				<li>交易频次</li>
+				<li class="trade">
+					<div class="money">
+						<p class="total">总交易次数:<span class="num" id="F">1.1</span>万次</p>
+						<p class="decline R" id="Fr">下降<span class="num" >1.8%</span></p>
+					</div>
+					<div class="comp">
+						<p class="up">上涨企业数 : <span class="num" id="Fu">38</span>家<i class="Up"></i></p>
+						<p class="down">下降企业数 : <span class="num" id="Fd">36</span>家<i class="Down"></i></p>
+					</div>
+				</li>
+			</ul>
+			<ul class="output-sales">
+				<li>产销量</li>
+				<li class="day-output">
+					<p class="title">重点钢企产量</p>
+					<p class="num-row"><span class="num" id="DC">172</span>万吨</p>
+					<p class="ratio-row"><span class="num" id="DCr">1.3%<i class="Down"></i></span></p>
+				</li>
+				<li class="day-output">
+					<p class="title">重点钢企销量</p>
+					<p class="num-row"><span class="num" id="DX">236</span>万吨</p>
+					<p class="ratio-row"><span class="num" id="DXr">2.1%<i class="Down"></i></span></p>
+				</li>
+				<li class="day-output">
+					<p class="title">重点钢企库存</p>
+					<p class="num-row"><span class="num" id="KC">1081</span>万吨</p>
+					<p class="ratio-row"><span class="num" id="KCr">6.8%<i class="Down"></i></span></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 市场交易 -->
+
+	<!-- 舆情 -->
+	<div class="content-box public-sentiment" style="display: none;">
+		<div class="Box">
+			<div class="w50">
+				<p class="deputy-title">热点聚焦</p>
+				<div class="hotspot-box">
+					<ul class="hotspot-list">
+						<li class="hotspot-cell"><a href="javascript:;" onclick="showDetails();"><i>1</i><span class="title">近三年来,我国进口钢材数量占比一直比较低</span><span class="alike-article">【相同文章231】</span></a></li>
+						<li class="hotspot-cell"><a href="javascript:;" onclick="showDetails();"><i>2</i><span class="title">2015年，我国钢材产量达到12亿吨，为历史之最</span><span class="alike-article">【相同文章231】</span></a></li>
+						<li class="hotspot-cell"><a href="javascript:;" onclick="showDetails();"><i>3</i><span class="title">产能利用率是钢企盈利非常重要的指标之一</span><span  class="alike-article">【相同文章231】</span></a></li>
+						<li class="hotspot-cell"><a href="javascript:;" onclick="showDetails();"><i>4</i><span class="title">受到国内经济下行，结构调整，国际经济疲软</span><span class="alike-article">【相同文章231】</span></a></li>
+						<li class="hotspot-cell"><a href="javascript:;" onclick="showDetails();"><i>5</i><span class="title">产能利用率是钢企盈利非常重要的指标之一</span><span  class="alike-article">【相同文章231】</span></a></li>
+					</ul>
+					<div id="hot-news"></div>
+				</div>
+			</div>
+			<div class="w50">
+				<div class="sentiment-analyse">
+					<p class="deputy-title">情绪分析</p>
+					<div class="h25w110" id="sentiment-analyse"></div>
+				</div>
+				<div id="EmotionAnalysis_Chars" style="width: 578px; height: 200px;"></div>
+			</div>
+		</div>
+		<div style="margin-top: 15px;">
+			<p class="deputy-title w100">负面情绪分布</p>
+			<div class="scatter-box">
+				<div id="negativeEmotionDistribution_Chars" class="w50" style="display: inline-block;width: 500px; height: 300px;"></div>
+				<div class="scatter-top10 w50">
+					<ul class="top10-list">
+						<li class="top10-cell"><span>省份</span><span>信息数</span></li>
+						<li class="top10-cell rowC"><span>北京</span><span>2314</span></li>
+						<li class="top10-cell"><span>上海</span><span>1462</span></li>
+						<li class="top10-cell rowC"><span>广东</span><span>1255</span></li>
+						<li class="top10-cell"><span>浙江</span><span>11112</span></li>
+						<li class="top10-cell rowC"><span>山东</span><span>1678</span></li>
+						<li class="top10-cell"><span>江苏</span><span>1235</span></li>
+						<li class="top10-cell rowC"><span>河南</span><span>1133</span></li>
+						<li class="top10-cell"><span>福建</span><span>1066</span></li>
+						<li class="top10-cell rowC"><span>湖北</span><span>314</span></li>
+						<li class="top10-cell"><span>海外</span><span>213</span></li>
+					</ul>
+					<p class="explain">(信息排名前10的省份)</p>
+				</div>
+			</div>
+		</div>
+		<div class="details">
+			<p class="deputy-title"><a href="javascript:;" onclick="hidDetails();">热点聚焦</a><span class="now-position">当前位置:舆情>热点聚焦</span></p>
+			<div class="details-header">
+				<p class="details-title">7月钢铁产量不降反升，监管层要求各省每月三次"三报"去产能</p>
+				<p class="details-source"><span>本文来源九次方资讯</span><span class="date">2016-8-5 <span class="time">12:11</span></span></p>
+			</div>
+			<div class="details-content">
+				
+			</div>
+		</div>
+	</div>
+	<!-- 舆情 -->
+	<!-- 采集与冶炼 -->
+	<div class="content-box subdivi"  style="display: none;">
+		<div class="resou-box" id="resou-box1">
+			<span class="resou hover">铁矿石</span><span class="resou">焦炭</span><span class="resou">生铁</span><span class="resou">粗钢</span><span class="resou">吨钢</span>	
+		</div>
+
+		<div class="chart-box Box">
+			<div class="world-map">
+				<div id="subdivisionCollection_Chars" style="width: 680px; height: 445px;"></div>
+			</div>
+			<div class="column-chart">
+				<p class="deputy-title">铁矿石产量_年度值(百万吨)</p>
+				<div id="outputValue_Chars" style="margin-top: 10px; width: 380px; height: 420px;"></div>
+			</div>
+		</div>
+	</div>
+	<!-- 采集与冶炼 -->
+	<!-- 钢材成品 -->
+	<div class="content-box subdivi" style="display: none;">
+		<div class="resou-box"  id="resou-box2">
+			<span class="resou hover">螺纹钢</span><span class="resou">线材</span><span class="resou">热轧板卷</span><span class="resou">冷轧板卷</span><span class="resou">镀锌</span><span class="resou">中厚板</span>	
+		</div>
+
+		<div class="chart-box Box">
+			<div class="world-map">
+				<div id="steelProductMap_Chars" style="width: 680px; height: 445px;"></div>
+			</div>
+			<div class="column-chart">
+				<p class="deputy-title">螺纹钢产量_季度值(吨)</p>
+				<div id="steelProductYield_Chars" style="margin-top: 10px; width: 380px; height: 420px;"></div>
+			</div>
+		</div>	
+	</div>
+	<!-- 钢材成品 -->
+	<!-- 下游消费 -->
+	<div class="content-box downstream" style="display: none;">
+		<div class="resou-box"  id="resou-box3">
+			<span class="resou hover" id="fdc">房地产</span><span class="resou" id="qc">汽车</span><span class="resou" id="gtds">钢铁电商</span>	
+		</div>
+		<div class="chart-box Box" style="width: 100%;">
+			 <div id="consumption_Chars" style="width: 100%; height: 480px;"></div>
+		</div>
+
+	</div>
+	<!-- 下游消费 -->
+</body>
+<script type="text/javascript" src="js/classLib/jquery.min.js"></script>
+<script type="text/javascript" src="js/classLib/select.js"></script>
+<script type="text/javascript" src="js/classLib/pages.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/china.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/world.js"></script>
+<script type="text/javascript" src="js/geoCoordMap.js"></script>
+<script type="text/javascript" src="js/Map_tradingTrend.js"></script>
+<script type="text/javascript" src="js/environment.js"></script>
+<script type="text/javascript">
+
+		$(".aui-tab .aui-tab-item").bind("click", function () {
+			var index = $(this).index();
+			var divs = $(".content-box");
+			$(this).addClass('aui-active').siblings().removeClass('aui-active'); //设置当前选中项为选中样式
+			divs.hide();//隐藏所有选中项内容
+			divs.eq(index).show(); //显示选中项对应内容
+			hidDetails();
+
+			switch(index){
+				case 1:publicSentiment();//舆情
+				break;
+				case 2:AcquisitionSmelting();//采集与冶炼
+				break;
+				case 3:steelProductMap();//细分钢材成品
+				break;
+				case 4:DownstreamConsumption();//下游产品
+				break;
+			}
+		});
+	function showDetails(){
+		$('.public-sentiment .details').show();
+	}
+	function hidDetails(){
+		$('.public-sentiment .details').hide();
+	}
+</script>
+<script type="text/javascript">
+/* 模拟数据
+	TF:交易总额 	TFr:交易总额增长/下降率
+	U:上涨企业数
+	D:下降企业数
+	DC:日产量	DCr:日产量增长/下降率
+	DX:日销量	DXr:日销量增长/下降率
+	KC:库存量	KCr:库存量增长/下降率
+*/
+var tradeData = [
+	{TF:'100',TFr:'-1.8',U:'295',D:'495',DC:'220',DCr:'-2',DX:'173',DXr:'-1.5',KC:'1533',KCr:'+3'},
+	{TF:'400',TFr:'-2',U:'310',D:'480',DC:'210',DCr:'-2.3',DX:'181',DXr:'-1.9',KC:'1450',KCr:'+2.3'},
+	{TF:'900',TFr:'-2.2',U:'347',D:'443',DC:'230',DCr:'-2.2',DX:'172',DXr:'-1.3',KC:'1390',KCr:'+2.4'},
+	{TF:'2000',TFr:'-2.7',U:'362',D:'428',DC:'240',DCr:'-2.5',DX:'168',DXr:'-1.32',KC:'1370',KCr:'+1.5'}
+];
+//交易频次
+var frequencyData = [ 
+	{F:'1.1',Fr:'-1.8',Fu:'243',Fd:'121'},
+	{F:'3.5',Fr:'-1.4',Fu:'313',Fd:'211'},
+	{F:'6.4',Fr:'-1.5',Fu:'243',Fd:'272'},
+	{F:'12',Fr:'-1.6',Fu:'152',Fd:'423'},
+];
+
+
+var option = { 0:'过去1个月',1:'过去3个月',2:'过去6个月',3:'过去12个月' };
+//交易态势
+var jyts = new Select('trade-form',false,option,function(){
+	var val = this.val;
+
+	tradeForm(parseInt(val));
+});
+
+// 交易额数据
+function tradeForm(j){
+
+var	Data = tradeData[j];
+var	Data2 = frequencyData[j];
+	
+	var TF = Data.TF;
+	$('#TF').html(TF);
+	
+	var TFr = UpDown2(Data.TFr);
+	$('#TFr').html(TFr);
+
+	var U = Data.U;
+	$('#U').html(U);
+
+	var D = Data.D;
+	$('#D').html(D);
+
+	var DC = Data.DC;
+	$('#DC').html(DC);
+	var DCr = UpDown(Data.DCr);
+	$('#DCr').html(DCr);
+
+	var DX = Data.DX;
+	$('#DX').html(DX);
+	var DXr = UpDown(Data.DXr);
+	$('#DXr').html(DXr);
+
+	var KC = Data.KC;
+	$('#KC').html(KC);
+	var KCr = UpDown(Data.KCr);
+	$('#KCr').html(KCr);
+
+var F = Data2.F;
+	$('#F').html(F);
+var Fr = UpDown2(Data2.Fr);
+	$('#Fr').html(Fr);
+var Fu = Data2.Fu;
+	$('#Fu').html(Fu);
+var Fd = UpDown2(Data2.Fd);
+	$('#Fd').html(Fd);
+
+
+	function UpDown(num){
+		var html = num.substring(1,num.length);
+		if (num[0] == '-') {
+			html = '<span style="color:#d40a02;">'+ html +'%<i class="Down"></i></span>';
+		}else if (num[0] == '+'){
+			html = '<span style="color:#10af22;">'+ html +'%<i class="Up"></i></span>';
+		}
+		return html;
+	}
+
+	function UpDown2(num){
+		var html = num.substring(1,num.length);
+
+		if (num[0] == '-') {
+			html ='下降<span class="num" style="color:#d40a02;">'+ html +'%</span>';
+		}else if (num[0] == '+'){
+			html ='上升<span class="num" style="color:#10af22;">'+ html +'%</span>';
+		}
+		return html;
+	}
+	
+}
+
+</script>
+
+<script type="text/javascript">
+	// $('#resou-box1 .resou').click(function(){
+	// 	var resouObj = $(this).parent('.resou-box').children('.resou');
+	// 		resouObj.removeClass('hover');
+	// 	$(this).addClass('hover');
+	// 	var title = $(this).text() + '储量 (2015)';
+	// 	var _charts =charts.init({ id: 397, container: "world-map",
+	//     		option: { options: [{ series:[{ name: title }] }] }
+	//     	});
+
+	// 	$(this).parents('.content-box').find('.deputy-title').text( $(this).text() + '产量_年度值(百万吨)');
+	// 	var _charts = charts.init({ id: 407, container: "chart5"});
+	// });
+
+	// $('#resou-box2 .resou').click(function(){
+	// 	var resouObj = $(this).parent('.resou-box').children('.resou');
+	// 		resouObj.removeClass('hover');
+	// 	$(this).addClass('hover');
+
+	// 	var _charts =charts.init({ id: 408, container: "chart6"});
+	// 	$(this).parents('.content-box').find('.deputy-title').text( $(this).text() + '产量_年度值(百万吨)');
+	// 	var _charts = charts.init({ id: 409, container: "chart7"});
+	// });
+
+	// $('#resou-box3 .resou').click(function(){
+	// 	var resouObj = $(this).parent('.resou-box').children('.resou');
+	// 		resouObj.removeClass('hover');
+	// 	$(this).addClass('hover');
+	// 	var id = $(this).attr('id');
+	// 	if (id == 'fdc') {
+	// 		var _charts = charts.init({id: 356,container: "chart4",option:{
+	// 			legend: {
+	// 			    data:['固定资产投资完成额（百万元）','开发投资完成额（百万元）']
+	// 			},
+	// 			series: [{name:'固定资产投资完成额（百万元）',},{name:'开发投资完成额（百万元）',}]
+	// 		}});
+	// 	}
+	// 	if (id == 'qc') {
+	// 		var _charts = charts.init({id: 356,container: "chart4",option:{
+	// 			legend: {
+	// 			    data:['汽车产量_当月值（万辆）','汽车销量_当月值（万辆）']
+	// 			},
+	// 			series: [{name:'汽车产量_当月值（万辆）',},{name:'汽车销量_当月值（万辆）',}]
+	// 		}});
+	// 	}
+	// 	if (id == 'gtds') {
+	// 		var _charts = charts.init({id: 356,container: "chart4",option:{
+	// 			legend: {
+	// 			    data:['欧冶云商_成交量（万吨）','钢联_成交量（万吨）']
+	// 			},
+	// 			series: [{name:'欧冶云商_成交量（万吨）',},{name:'钢联_成交量（万吨）',}]
+	// 		}});
+	// 	}
+		
+	// });
+</script>
+<script type="text/javascript">
+
+var option = { 0:'过去1个月',1:'过去3个月',2:'过去6个月',3:'过去12个月' };
+//情绪分析
+var qxfx = new Select('sentiment-analyse',false,option,function(){
+	var val = this.val;
+
+	// if (val=='0'||val=='3') {
+	// 	var _charts =charts.init({ id: 313, container: "chart2"});
+	// }else if(val == '1'){
+	// 	var _charts =charts.init({ id: 392, container: "chart2"});
+	// }else if(val == '2'){
+	// 	var _charts =charts.init({ id: 393, container: "chart2"});
+	// }
+	// var _charts = charts.init({ id: 394, container: "chart1"});
+	
+});
+
+</script>
+<script type="text/javascript">
+	var aa = new Pages('hot-news',false,false);
+</script>
+</html>

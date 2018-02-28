@@ -1,0 +1,121 @@
+.content-box {width: 1075px; text-align: center; overflow: hidden; border: 1px solid #cccccc; margin-bottom: 10px; background-color: #ffffff; padding: 25px 15px 35px 15px; }
+.content-box-title { text-align: center; font-size: 18px; } 
+
+.column-box { display: inline-block; text-align: left; }
+.column-boxR{width:300px;}
+.column-box ul { border-bottom: 1px solid #cccccc;  }
+.column-box ul li { padding: 10px 15px; border: 1px solid #cccccc; border-bottom: 0;
+}
+.column-box ul li:first-child {
+    border: 0; padding: 0; padding-left: 4px; border-left: 4px solid #ff0000; margin: 10px 0;
+}
+
+
+
+
+/*交易额*/
+.trading-volume .total { 
+    margin-top: 5px;
+}
+.trading-volume .total p { 
+    display: inline-block; font-size: 14px;
+}
+.trading-volume .total .num,.trading-volume .total .decline span { 
+    color: #d40a02; font-size: 20px; display: inline-block;    
+}
+.trading-volume .total .decline { 
+    float: right;
+}
+.trading-volume .total .decline span { 
+    margin-left: 5px;
+}
+.up-down-company { overflow: hidden; }
+.up-down-company div { display: inline-block; }
+.up-down-company .up { float: left; }
+.up-down-company .down { float: right; }
+.up-down-company p { margin-bottom: 5px; }
+.up-down-company .num { font-size: 20px; margin-top: 5px;  }
+.up-down-company .up .num { color: #10af22; }
+.up-down-company .down .num { color: #d40a02; }
+
+/*产销量*/
+/*.output-sales { margin-top: 10px; }*/
+.day-output .output { margin-top: 5px; }  
+.output .num,.output .ratio { 
+    display: inline-block; font-size: 20px; color: #d40a02; 
+}
+.output .num { font-size: 14px;  }
+.output .num span { font-size: 20px;  }
+.output .ratio { float: right;  }
+
+/*交易额地图*/
+.trading-volume-map { 
+    /*height: 413px; width: 560px; border: 1px solid #cccccc;*/ margin-top: 20px; display: inline-block;
+}
+
+
+/*市场舆情*/
+.column-box .market,.market .market-table { border: 0; padding: 0; }
+
+/*热点案例*/
+.more { 
+    color: #0D94c0; cursor: pointer;
+}
+.hotspot p { margin-bottom: 5px; }
+
+.hotspot-content { 
+    width: 300px;
+    height: 160px;
+    padding: 10px 0 !important;
+ }
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+/*.swiper-button-prev,.swiper-button-next {
+    background-size: 27px 20px;     
+}
+.swiper-button-prev{ left: 5px; }
+.swiper-button-next{ right: 5px; }*/
+.swiper-slide p{ padding: 0 25px; }
+.swiper-pagination-bullet-active {
+    background: #d40a02;
+}
+.hotspot .title{
+    overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;white-space:nowrap;
+}
+.hotspot .brief{
+    height: 100px;
+    line-height: 20px;
+    overflow: hidden;
+    text-align: justify;
+}
+.hotspot .brief span {
+    color: #666; 
+}
+
+
+/*贷后预警*/
+.loan-after p{ line-height: 30px; }
+.loan-after .num { font-size: 20px;  }
+/*风险预警*/
+.risk-warning div{ 
+    border: 1px solid #cccccc;
+    border-bottom: 0;
+    /*padding: 5px 10px !important;*/
+}
+
+.risk-warning-list { font-size: 16px; }
+.risk-warning-list .list-cell { padding: 5px 0; border-bottom: 1px solid #cccccc;  }
+.risk-warning-list .list-cell:first-child { border:0; color: #ffffff; background-color: #d40a02; }
+.risk-warning-list .list-cell:last-child { border-bottom: 0; }
+.risk-warning-list .list-cell span { width: 100px; text-align: center; display: inline-block; }
+
+.risk-warning .high { color: #d40a02; }
+.risk-warning .medium { color:#edbe31;  }
+.risk-warning .low { color:#36af36;  }
+
+
+.select {
+    margin: 0 auto;
+}

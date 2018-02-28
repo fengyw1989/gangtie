@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+	<title>钢铁供应链金融大数据</title>
+	<link rel="stylesheet" href="css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/content.css">
+</head>
+<body>
+	<div class="content-box">
+		<p class="content-box-title">宏观 - 重点钢企交易态势</p>
+		<div class="column-box L">
+			<ul>
+				<li>交易额</li>
+				<li class="trading-volume">
+					<p>交易总额（亿元）:</p>
+					<div class="total">
+						<p class="num" id="transaction-total">
+							<span><span class="num" id="TF"><span class="numBg">1</span><span class="numBg">0</span><span class="numBg">0</span></span>
+						</p>
+						<p class="decline" id="TFr">下降<span>1.8%</span></p>
+					</div>
+				</li>
+				<li class="up-down-company">
+					<div class="up">
+						<p>上涨企业数</p>
+						<span><span class="num" id="U"><span class="numBg">2</span><span class="numBg">9</span><span class="numBg">5</span></span><i class="Up"></i></span>
+					</div>
+					<div class="down">
+						<p>下降企业数</p>
+						<span><span class="num" id="D"><span class="numBg">4</span><span class="numBg">9</span><span class="numBg">5</span></span><i class="Down"></i></span>
+					</div>
+				</li>
+			</ul>
+
+			<ul class="output-sales">
+				<li>产销量</li>
+				<li class="day-output">
+					<p>重点钢企日均产量:</p>
+					<div class="output">
+						<p class="num"><span id="DC">220</span>万吨</p>
+						<p class="ratio" id="DCr"><span>2%<i class="Down"></i></span></p>
+					</div>
+				</li>
+				<li class="day-output">
+					<p>重点钢企日均销量:</p>
+					<div class="output">
+						<p class="num"><span id="DX">173</span>万吨</p>
+						<p class="ratio" id="DXr"><span >1.5%</span><i class="Down"></i></p>
+					</div>
+				</li>
+				<li class="day-output">
+					<p>重点钢企旬末库存:</p>
+					<div class="output">
+						<p class="num"><span id="KC">362</span>万吨</p>
+						<p class="ratio" id="KCr"><span >3%</span><i class="Up"></i></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 交易额地图 -->
+		<div class="trading-volume-map">
+			<div id="trade-form" class="h25w110"></div>
+			<div id="tradingTrendMap" style="width: 540px;height:400px;"></div>
+		</div>
+		<!-- 交易额地图 end -->
+
+		<div class="column-box column-boxR R">
+			<ul class="market">
+				<li>市场舆情</li>
+				<li class="market-table">
+					<div id="chart-1" style=" width: 300px; height: 250px;margin-top:-55px;"></div>
+				</li>
+			</ul>
+
+			<ul class="hotspot">
+				<li>热点案例 <a href="environment.html"><span class="more R">更多</a></span></li>
+				<li class="hotspot-content">
+				    <!-- Swiper -->
+				    <div class="swiper-container">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide">
+				            	<p class="title">标题:<span>山东钢铁金融纠纷</span></p>
+				            	<p class="source">来源:<span>第一财经</span></p>
+				            	<p class="brief">摘要:<span>7月26日，山东钢铁对外发布一份涉及诉讼的公告，这份公告共列出18起诉讼，案件处于一审阶段。</span></p>
+				            </div>
+				            <div class="swiper-slide">
+				            	<p class="title">标题:<span>八一钢铁遭诉讼</span></p>
+				            	<p class="source">来源:<span>东方财富</span></p>
+				            	<p class="brief">摘要:<span>新疆八一钢铁股份有限公司因合同纠纷遭诉讼，被要求给付焦炭货款2628.35万元，支付逾期付款违约金73.59万元。</span></p>
+				            </div>
+				            <div class="swiper-slide">
+				            	<p class="title">标题:<span>华菱钢铁重组预案</span></p>
+				            	<p class="source">来源:<span>证券日报</span></p>
+				            	<p class="brief">摘要:<span>华菱钢铁7月17日晚间发布重大重组预案，该公司计划整体剥离钢铁主业，置入金融及节能发电资产。</span></p>
+				            </div>
+				        </div>
+				        <!-- Add Pagination -->
+				        <div class="pagination"></div>
+				        <!-- Add Arrows -->
+				        <div class="swiper-button-prev"></div>
+				        <div class="swiper-button-next"></div>
+				    </div>
+				    <!-- Swiper -->
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<!-- 下部分 -->
+	<div class="content-box">
+		<p class="content-box-title">我行 - 企业贷后风险预警</p>
+		<div class="column-box L" style="max-width: 196px;">
+			<ul style="display: inline-block;">
+				<li>贷后预警</li>
+				<li class="loan-after" style="font-size: 14px;">
+					<p>核心企业 : <span class="num">8</span>家</p>
+					<p>关联企业主动预警 : <span class="num">14</span>家</p>
+					<p>关联企业被动预警 : <span class="num">32</span>家</p>
+				</li>
+			</ul>
+
+			<ul class="details B0">
+				<li>详情</li>
+				<li class="B0" style="padding: 0; margin-top: 40px; width: 320px;">
+					<div id="chart-2" style="height: 220px;"></div>
+				</li>
+			</ul>
+		</div>
+		<!-- 企业贷后风险预警地图 -->
+		<div class="trading-volume-map">
+			<div id="riskEarlyWarning" style="width: 540px;height:400px;"></div>
+		</div>
+		<!-- 企业贷后风险预警地图 end -->
+
+		<div class="column-box R">
+			<ul class="risk-warning">
+				<li>风险预警 <a href="warning.html"><span class="more R">更多</span></a></li>
+				<div class="risk-warning-list">
+					<p class="list-cell"><span>企业名称</span><span>风险等级</span><span>风险摘要</span></p>
+					<p class="list-cell"><a href="details/index.html" target="view_window"><span class="company">唐山特钢</span></a><span class="grade high">高</span><span class="explain">拖欠工资</span></p>
+					<p class="list-cell"><a href="details/index.html" target="view_window"><span class="company">浙江特钢</span></a><span class="grade high">高</span><span class="explain">法律诉讼</span></p>
+					<p class="list-cell"><a href="details/index.html" target="view_window"><span class="company">南宁特钢</span></a><span class="grade high">高</span><span class="explain">拖欠工资</span></p>
+					<p class="list-cell"><a href="details/index.html" target="view_window"><span class="company">西安特钢</span></a><span class="grade high">高</span><span class="explain">法律诉讼</span></p>
+					<p class="list-cell"><a href="details/index.html" target="view_window"><span class="company">武汉特钢</span></a><span class="grade medium">中</span><span class="explain">拖欠工资</span></p>
+					<p class="list-cell"><a href="details/index.html" target="view_window"><span class="company">徐州特钢</span></a><span class="grade medium">中</span><span class="explain">法律诉讼</span></p>
+					<p class="list-cell"><a href="details/index.html" target="view_window"><span class="company">武汉特钢</span></a><span class="grade low
+					">低</span><span class="explain">济南工资</span></p>
+					<p class="list-cell"><a href="details/index.html" target="view_window"><span class="company">齐鲁特钢</span></a><span class="grade low
+					">低</span><span class="explain">法律诉讼</span></p>
+				</div>
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/classLib/jquery.min.js"></script>
+<script type="text/javascript" src="js/classLib/swiper.min.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/china.js"></script>
+<script type="text/javascript" src="js/classLib/select.js"></script>
+<script type="text/javascript" src="js/geoCoordMap.js"></script>
+<script type="text/javascript" src="js/Map_tradingTrend.js"></script>
+<script type="text/javascript" src="js/Map_riskEarlyWarning.js"></script>
+<script type="text/javascript" src="js/index-content.js"></script>
+
+<script>
+
+
+//  $(document).ready(function () {
+//     //返回echarts对象
+// 	var _charts = charts.init({ id: 271, container: "chart-1"});
+// 	var _charts = charts.init({ id: 272, container: "chart-2"});
+// });
+</script>
+<!--<script src="echarts-2.2.7/build/dist/echarts.js"></script>
+ <script type="text/javascript" src="js/chart.js"></script> 
+<script type="text/javascript" src="js/chart2.js"></script>-->
+
+
+<script type="text/javascript">
+/* 模拟数据
+	TF:交易总额 	TFr:交易总额增长/下降率
+	U:上涨企业数
+	D:下降企业数
+	DC:日产量	DCr:日产量增长/下降率
+	DX:日销量	DXr:日销量增长/下降率
+	KC:库存量	KCr:库存量增长/下降率
+*/
+var tradeData = [
+	{TF:'100',TFr:'-1.8',U:'295',D:'495',DC:'220',DCr:'-2',DX:'173',DXr:'-1.5',KC:'1533',KCr:'+3'},
+	{TF:'400',TFr:'-2',U:'310',D:'480',DC:'210',DCr:'-2.3',DX:'181',DXr:'-1.9',KC:'1450',KCr:'+2.3'},
+	{TF:'900',TFr:'-2.2',U:'347',D:'443',DC:'230',DCr:'-2.2',DX:'172',DXr:'-1.3',KC:'1390',KCr:'+2.4'},
+	{TF:'2000',TFr:'-2.7',U:'362',D:'428',DC:'240',DCr:'-2.5',DX:'168',DXr:'-1.32',KC:'1370',KCr:'+1.5'}
+];
+
+
+var option = { 0:'过去1个月',1:'过去3个月',2:'过去6个月',3:'过去12个月' };
+var selectObj = new Select('trade-form',false,option,function(){
+	var val = this.val;
+
+	tradeForm(parseInt(val));
+
+	// if (val=='0'||val=='3') {
+	// 	var _charts =charts.init({ id: 271, container: "chart-1"});
+	// }else if(val == '1'){
+	// 	var _charts =charts.init({ id: 384, container: "chart-1"});
+	// }else if(val == '2'){
+	// 	var _charts =charts.init({ id: 387, container: "chart-1"});
+	// }
+
+});
+
+// 交易额数据
+function tradeForm(j){
+
+	var	Data = tradeData[j];
+	
+	var TF = numBG(Data.TF);
+	$('#TF').html(TF);
+	
+	var TFr = UpDown2(Data.TFr);
+	$('#TFr').html(TFr);
+
+	var U = numBG(Data.U);
+	$('#U').html(U);
+
+	var D = numBG(Data.D);
+	$('#D').html(D);
+
+	var DC = Data.DC;
+	$('#DC').html(DC);
+	var DCr = UpDown(Data.DCr);
+	$('#DCr').html(DCr);
+
+	var DX = Data.DX;
+	$('#DX').html(DX);
+	var DXr = UpDown(Data.DXr);
+	$('#DXr').html(DXr);
+
+	var KC = Data.KC;
+	$('#KC').html(KC);
+	var KCr = UpDown(Data.KCr);
+	$('#KCr').html(KCr);
+
+	function UpDown(num){
+		var html = num.substring(1,num.length);
+		if (num[0] == '-') {
+			html = '<span style="color:#d40a02;">'+ html +'%<i class="Down"></i></span>';
+		}else if (num[0] == '+'){
+			html = '<span style="color:#10af22;">'+ html +'%<i class="Up"></i></span>';
+		}
+		return html;
+	}
+
+	function UpDown2(num){
+		var html = num.substring(1,num.length);
+
+		if (num[0] == '-') {
+			html ='下降<span>'+ html +'%</span>';
+		}else if (num[0] == '+'){
+			html ='上升<span>'+ html +'%</span>';
+		}
+		return html;
+	}
+	
+}
+
+function numBG(num){
+	var html =''; 
+	var s = 0;
+	for(var i=0;i<num.length;i++){
+		html+='<span class="numBg"><span class="n" style="animation-delay: -'+ s +'s;">'+ num[i] +'</span></span>';
+		s+=0.1;
+	}
+	return html;
+}
+
+// numAdd($('#TF'),6000,100);
+// numAdd($('#U'),8000,10);
+// numAdd($('#D'),10000,10);
+
+function numAdd(e,t,n) {
+	setInterval(function(){
+		var num = '';
+		var numBgObj = e.find('.n');
+		for(var i=0;i<numBgObj.length;i++){
+			num += numBgObj[i].innerHTML;
+		}
+		num = (parseInt(num) + parseInt(Math.random()*n)).toString();
+
+		var html = numBG(num);
+		e.html(html);
+	},t);
+}
+</script>
+</html>

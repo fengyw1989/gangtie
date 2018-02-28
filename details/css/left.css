@@ -1,0 +1,10 @@
+
+* { margin: 0; padding: 0; font-family: "SimHei","Microsoft YaHei",微软雅黑; }
+html,body { font-size: 16px; height: 100%; }
+body { background-color: #eeeeee; }
+a{ text-decoration:none; }
+.navWrap { width: 225px; height: 100%; background-color: #1b1b1b;  }
+.navWrap h4 { height: 60px; line-height: 60px; color: #fff; padding-left: 45px; }
+.navWrap .nav {  cursor: pointer; width: 100%; height: 35px; line-height: 35px;  color: #dfdfdf; }
+.nav .nav-wrap:hover, .hover .nav-wrap { background-color: #e81108; }
+.nav-wrap p {  font-size: 14px;padding-left: 45px; }

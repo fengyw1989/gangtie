@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>钢铁供应链金融大数据</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/emphases.css">
+</head>
+<body>
+    <div class="aui-tab" id="tab">
+        <div class="aui-tab-item aui-active">宏观研判</div>
+        <div class="aui-tab-item">自身聚焦</div>
+    </div>
+	<!--宏观严判-->
+	<div class="content-box">
+		<h3>钢贸诉讼案件</h3>
+		<!-- 交易额地图 -->
+		<div class="trading-volume-map">
+			<div id="select1"></div>
+			<p style="text-align: center; margin-top: 20px; font-size: 22px;color: #000;">钢贸诉讼案件分布</p>
+			<div id="steelLitigation" style="height: 480px;"></div>
+			<p style="text-align: center; margin-top: 10px; margin-bottom: 18px; font-size: 20px;color: #000;">诉讼案件:全国共发生钢贸诉讼事件<span style="color: #df1012;font-weight: 600;font-size: 22px;">3000</span>件。</p>
+		</div>
+		<!-- 交易额地图 end -->
+
+		<h3>库存与抵押总量对比</h3>
+		<div class="trading-volume-map" id="trading-volume-map">
+			<div id="select2"></div>
+			<div id="totalContrast" style="height: 480px;"></div>
+			<p style="text-align: center; margin-top: 20px; font-size: 18px;color: #000;">说明 ：当抵押总量超过社会库存,则一定存在社会抵押现象。</p>
+		</div>
+	</div>
+	<!--自身聚焦-->
+	<div class="content-box" style="display: none">
+		<h3>重复抵押识别</h3>
+		<div class="trading-volume-map">
+			<div class="content_a">
+					<table cellspacing='0' class="TABLE" style="margin-top: 0;border-bottom: 0; ">
+						<tr class="table-cell">
+							<td class="table-item">序号</td>
+							<td class="table-item">企业名称</td>
+							<td class="table-item">抵押总量</td>
+							<td class="table-item">库存总量</td>
+							<td class="table-item">风险识别</td>
+						</tr>
+						<tr class="table-cell">
+							<td class="table-item">1</td>
+							<td class="table-item"><a href="details/index.html" target="view_window">五矿邯邢矿业有限公司</a></td>
+							<td class="table-item">10000</td>
+							<td class="table-item">7000</td>
+							<td class="table-item">重复抵押</td>
+						</tr>
+						<tr class="table-cell">
+							<td class="table-item">2</td>
+							<td class="table-item"><a href="details/index.html" target="view_window">五矿邯邢矿业有限</a></td>
+							<td class="table-item">10000</td>
+							<td class="table-item">7000</td>
+							<td class="table-item">重复抵押</td>
+						</tr>
+						<tr class="table-cell">
+							<td class="table-item">2</td>
+							<td class="table-item"><a href="details/index.html" target="view_window">广东大顶矿业股份有限公司</a></td>
+							<td class="table-item">10000</td>
+							<td class="table-item">7000</td>
+							<td class="table-item">重复抵押</td>
+						</tr>
+						<tr class="table-cell">
+							<td class="table-item">2</td>
+							<td class="table-item"><a href="details/index.html" target="view_window">上海创兴资源开发股份有限公司</a></td>
+							<td class="table-item">10000</td>
+							<td class="table-item">7000</td>
+							<td class="table-item">重复抵押</td>
+						</tr>
+						<tr class="table-cell">
+							<td class="table-item">2</td>
+							<td class="table-item"><a href="details/index.html" target="view_window">海南矿业股份有限公司</a></td>
+							<td class="table-item">10000</td>
+							<td class="table-item">7000</td>
+							<td class="table-item">重复抵押</td>
+						</tr>
+					</table>
+					<!-- 分页容器 -->
+					<div id="page1"></div>
+					<!-- 分页容器end -->
+			</div>
+		</div>
+		<h3>资金流向监控</h3>
+		<div class="trading-volume-map">
+			<div class="content_b">
+                <p class="searchLab">
+					<span class="enterp active">上海大明贸易</span>
+					<span class="enterp">上海创兴资源开发</span>
+					<span class="enterp">海南矿业</span>
+					<span class="more">更多</span>
+					<!-- <span class="ep_search">
+						<input/>
+						<i class="icon"></i>
+					</span> -->
+				</p>
+				<div class="des_lab" style="display: none;">
+                    <span class="enterp">上海创兴资源开发</span>
+					<span class="enterp">广东大顶矿业</span>
+					<span class="enterp">海南矿业股份</span>
+					<span class="enterp">五矿邯邢矿业</span>
+					<span class="enterp">上海创兴资源开发</span>
+					<span class="enterp">广东大顶矿业</span>
+					<span class="enterp">海南矿业股份</span>
+					<span class="enterp">五矿邯邢矿业</span>
+					<!-- 分页容器 -->
+					<div id="page2"></div>
+					<!-- 分页容器end -->
+				</div>
+				<div id="flowMonitoring" style="height: 600px;width:800px;margin: 30px 100px;"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/classLib/jquery.min.js"></script>
+<script type="text/javascript" src="js/classLib/es5-array.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/china.js"></script>
+<script type="text/javascript" src="js/classLib/select.js"></script>
+<script type="text/javascript" src="js/geoCoordMap.js"></script>
+<script type="text/javascript" src="js/emphases.js"></script>
+<script type="text/javascript">
+	//$(document).ready(function(){
+		// var _charts1 = charts.init({id: 320,container: "box1"});
+		// var _charts2 = charts.init({id: 412,container: "chart-1"});
+		
+		$(".aui-tab .aui-tab-item").bind("click", function () {
+			var index = $(this).index();
+			var divs = $(".content-box");
+			$(this).addClass('aui-active').siblings().removeClass('aui-active'); //设置当前选中项为选中样式
+			divs.hide();//隐藏所有选中项内容
+			divs.eq(index).show(); //显示选中项对应内容
+
+			scroll();
+		});
+	//});
+	scroll();
+	function scroll(){
+		var show = true;
+		$(window).scroll(function () {
+			var ObjTop = $('#trading-volume-map').offset().top - $(window).scrollTop();
+			
+			if (ObjTop < 200 && show) {
+				totalContrast();
+				show = false;
+			}
+		
+		});
+	}
+
+//下拉菜单
+
+//诉讼案件
+	var option = { 0:'过去1个月',1:'过去3个月',2:'过去6个月',3:'过去12个月' };
+	
+	var ssaj = new Select('select1',false,option,function(){
+		var val = this.val;
+
+		// if (val=='0') {
+		// 	var _charts2 = charts.init({id: 412,container: "chart-1"});
+		// }else if(val == '1'){
+		// 	var _charts2 = charts.init({id: 413,container: "chart-1"});
+		// }else if(val == '2'){
+		// 	var _charts2 = charts.init({id: 414,container: "chart-1"});
+		// }else if(val == '3'){
+		// 	var _charts2 = charts.init({id: 415,container: "chart-1"});
+		// }
+		
+	});
+//库存与抵押
+	var option2 = { 0:'2016',1:'2015'};
+	var kudy = new Select('select2',false,option2,function(){
+		var val = this.val;
+
+		// var _charts3 = charts.init({id: 277,container: "chart-2"});
+	});
+
+
+	function details(){
+		window.location.href= "details/index.html";
+	}
+	enterp();
+	function enterp() {
+		var obj = $('.enterp');
+		obj.click(function(){
+			obj.removeClass('active');
+			$(this).addClass('active');
+			//var _charts1 = charts.init({id: 320,container: "box1"});
+		});
+	}
+	$('.searchLab .enterp').click(function(){
+		$('.more').removeClass('active');
+		$('.des_lab').hide();
+	});
+	$('.more').click(function(){
+		$('.enterp').removeClass('active');
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+		}else{
+			$(this).addClass('active');
+		}
+		$('.des_lab').toggle();
+		enterp();
+	});
+</script>
+<script type="text/javascript" src="js/classLib/pages.js"></script>
+<script type="text/javascript">
+	var page1 = new Pages('page1',false,false);
+	var page2 = new Pages('page2',false,false);
+</script>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>钢铁供应链金融大数据</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/warning.css">
+</head>
+<body>
+	<div class="content-box">
+		<div class="content-wrap">
+			<h3>贷后企业预警</h3>
+			<div class="chart-box">
+				<!-- 企业贷后风险预警地图 -->
+				<div class="trading-volume-map L">
+					<div id="riskEarlyWarning" style="width: 500px;height:360px;"></div>
+				</div>
+				<!-- 企业贷后风险预警地图 end -->
+				<div class="loan-warning L">
+					<div class="title" id="loan-after-warning"><h3>贷后预警</h3>
+					<a href="javascript:;" tag="1" onclick="showCompList();"><span class="comp-list">企业列表</span></a></div>
+					<div class="loan-warning-wrap">
+						<div class="warning-info">
+							<p><span class="value"><span class="num">8</span>家</span>
+							<span class="attr">核心企业</span></p>
+							<p><span class="value"><span class="num">12</span>家</span><span class="attr">关联企业主动预警</span></p>
+							<p><span class="value"><span class="num">32</span>家</span><span class="attr">关联企业被动预警</span></p>
+						</div>
+						<div class="title"><h3>详情</h3></div>
+						<div id="warningDetails" style="margin-top: 30px; z-index: 1; height: 160px;"></div>
+						<div class="warning-list" style="display: none; z-index: 99;">
+							<table cellspacing='0' class="TABLE">
+								<tr class="table-cell bg">
+									<td class="table-item">序号</td>
+									<td class="table-item">企业名称</td>
+									<td class="table-item">预警摘要</td>
+								</tr>
+								<tr class="table-cell core-enterp-cell">
+									<td class="table-content">1</td>
+									<td class="table-content numColor">唐山特钢</td>
+									<td class="table-content">拖欠工资</td>
+								</tr>
+								<tr class="table-cell core-enterp-cell bg">
+									<td class="table-content">2</td>
+									<td class="table-content numColor">浙江特钢</td>
+									<td class="table-content">法律诉讼</td>
+								</tr>
+								<tr class="table-cell core-enterp-cell">
+									<td class="table-content">3</td>
+									<td class="table-content numColor">南宁特钢</td>
+									<td class="table-content">拖欠工资</td>
+								</tr>
+								<tr class="table-cell core-enterp-cell bg">
+									<td class="table-content">4</td>
+									<td class="table-content numColor">西安特钢</td>
+									<td class="table-content">法律诉讼</td>
+								</tr>
+								<tr class="table-cell core-enterp-cell">
+									<td class="table-content">5</td>
+									<td class="table-content numColor">武汉特钢</td>
+									<td class="table-content">拖欠工资</td>
+								</tr>
+								<tr class="table-cell core-enterp-cell bg">
+									<td class="table-content">6</td>
+									<td class="table-content numColor">徐州特钢</td>
+									<td class="table-content">法律诉讼</td>
+								</tr>
+								<tr class="table-cell core-enterp-cell">
+									<td class="table-content">7</td>
+									<td class="table-content numColor">南宁特钢</td>
+									<td class="table-content">拖欠工资</td>
+								</tr>
+								<tr class="table-cell core-enterp-cell bg">
+									<td class="table-content">8</td>
+									<td class="table-content numColor">义乌特钢</td>
+									<td class="table-content">法律诉讼</td>
+								</tr>
+							</table>
+							<!-- 分页容器 -->
+							<div id="core-enterp"></div>
+							<!-- 分页容器end -->
+						</div>
+						<div class="enterp-details" style="display: none; z-index: 99;">
+							<div class="core-enterp">
+								<p class="core-enterp-head">
+									<span class="name">宋城钢铁有限公司</span>
+									<span class="add"><i></i>合肥</span>
+									<a href="details/index.html" target="view_window"><span class="details">详情</span></a>
+								</p>
+								<div class="core-enterp-risk-info">
+									<span class="L">风险摘要:<span class="summary">拖欠工资</span></span>
+									<span class="R">风险级别:<span class="grade">高</span></span>
+								</div>
+							</div>
+							<div class="relation-enterp">
+								<div class="title"><h3>关联企业</h3></div>
+								<table cellspacing='0' class="TABLE" style="margin-top: 0;">
+									<tr class="table-cell bg">
+										<td class="table-item">序号</td>
+										<td class="table-item">企业名称</td>
+										<td class="table-item">风险</td>
+									</tr>
+									<tr class="table-cell">
+										<td class="table-content">1</td>
+										<td class="table-content numColor"><a href="details/index.html" target="view_window">五矿邯邢矿业有限公司</a></td>
+										<td class="table-content">被动预警</td>
+									</tr>
+									<tr class="table-cell">
+										<td class="table-content">2</td>
+										<td class="table-content numColor"><a href="details/index.html" target="view_window">海南矿业股份有限公司</a></td>
+										<td class="table-content">被动预警</td>
+									</tr>
+									<tr class="table-cell">
+										<td class="table-content">3</td>
+										<td class="table-content numColor"><a href="details/index.html" target="view_window">上海创兴资源开发有限公司</a></td>
+										<td class="table-content">被动预警</td>
+									</tr>
+									<tr class="table-cell">
+										<td class="table-content">4</td>
+										<td class="table-content numColor"><a href="details/index.html" target="view_window">广东大鼎创业股份有限公司</a></td>
+										<td class="table-content">被动预警</td>
+									</tr>
+								</table>
+								<!-- 分页容器 -->
+								<div id="relat-enterp" style="margin-top: 10px;"></div>
+								<!-- 分页容器end -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-wrap L">
+			<h3>细分行业预警</h3>
+			<div class="chart-box">
+				<div class="involve-me see">查看我行涉及企业</div>
+				<div id="chart-4" style="height: 100%;"></div>
+			</div>
+		</div>
+		<div class="content-wrap L">
+			<h3>区域预警</h3>
+			<div class="chart-box" id="result-show">
+				<div class="involve-me">查看我行涉及企业</div>
+				<div id="regionWarnin" style="height: 100%;"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/classLib/jquery.min.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="js/classLib/echarts/china.js"></script>
+<script type="text/javascript" src="js/geoCoordMap.js"></script>
+<script type="text/javascript" src="js/Map_riskEarlyWarning.js"></script>
+<script type="text/javascript" src="js/warning.js"></script>
+<script>
+ $(document).ready(function () {
+ //    //返回echarts对象
+	// var _chart1 = charts.init({ id:317, container: "chart-2"});
+	// var _chart2 = charts.init({ id:336, container: "chart-3"});
+	// 	_chart2.on('click', function (params) {
+	// 		//console.log(params)
+	// 	});
+});
+
+	var header = $('#loan-after-warning h3');
+		backBtn = $('#loan-after-warning .comp-list');
+		listBox = $('.loan-warning .warning-list');
+		detailsBox = $('.loan-warning .enterp-details');
+	function showCompList(){
+		var tag = backBtn.attr('tag');
+		console.log(tag);
+			if (tag=='1') {
+				listBox.hide();
+				detailsBox.hide();
+				backBtn.html('企业列表');
+				backBtn.attr('tag','0');
+			}else if(tag=='2'){
+				showDetails();
+			}else {
+				header.html('核心企业');
+				backBtn.html('返回');
+				listBox.show();
+				backBtn.attr('tag','1');			
+			}
+	}
+
+	function showDetails(){
+		var tag = backBtn.attr('tag');
+			if (tag =='2') {
+				detailsBox.hide();
+				listBox.hide();
+				backBtn.html('企业列表');
+				backBtn.attr('tag','0');
+			}else{
+				header.html('核心企业');
+				backBtn.html('返回');
+				detailsBox.show();
+				listBox.hide();
+				backBtn.attr('tag','2');			
+			}
+	}
+
+	$('.warning-list .core-enterp-cell').click(function(){
+		backBtn.attr('tag','2');
+		//listBox.hide();
+		//detailsBox.show();
+	});
+
+	$('.see').click(function(){
+		window.location = 'list.html';
+	});
+</script>
+<script src="echarts-2.2.7/build/dist/echarts.js"></script>
+<script type="text/javascript" src="js/chart4.js"></script>
+<script type="text/javascript" src="js/classLib/pages.js"></script>
+<script type="text/javascript">
+	var coreEnterp = new Pages('core-enterp',false,false);
+	var relatEnterp = new Pages('relat-enterp',false,false);
+</script>
+</html>

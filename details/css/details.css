@@ -1,0 +1,149 @@
+.content-wrap { width: 1000px; }
+.content-box { 
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+    padding: 15px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.core-comp {     display: inline-block;
+    vertical-align: middle; padding-left: 20px; font-size: 14px;font-weight: 100; color: #005eeb; float: right !important; position: relative; }
+.core-comp i { display: inline-block; width: 14px; height: 14px;
+    background-color: #f82b37; cursor: pointer; position: absolute; top: 50%;left: 0; margin-top:-7px;
+}
+.core-comp .is a{ 
+    width: 14px;
+    height: 14px;
+    display: block;
+    background: url(../../images/isCore.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.numColor { color: #e21b10; }
+.comp-name { margin-bottom: 15px; overflow: hidden; height: 27px;
+    line-height: 27px; }
+.comp-name span{ display: inline-block; vertical-align: middle; float: left; }
+.content-box .content-title { font-size: 18px; color: #e21b10; padding-bottom: 10px; 
+    border-bottom: 1px solid #e6e6e6; height: 30px; line-height: 30px; overflow: hidden; position: relative; }
+
+.basic-info-table { }
+
+#basic-info .TABLE { width: 620px;  border-collapse:collapse;   float: left; } 
+#basic-info .table-cell {  }
+#basic-info .table-cell .table-item { border-bottom:1px solid #e1e1e1;   width: 115px; }
+#basic-info .inof-box {
+    overflow: hidden;     margin-top: 30px;
+}
+.inof-box .risk-info {
+    margin-left: 65px; display: inline-block;
+    float: left;
+}
+.inof-box .risk-info p {
+    height: 129px;
+}
+.inof-box .risk-info p span{ 
+    margin-left: 40px;
+}
+
+.risk-info .level{ display: inline-block;
+    font-size: 25px; color: #fff;  height: 54px; width: 54px; text-align: center; line-height: 55px; background-color: red; }
+.risk-info .label { background-color: #ff4c4c; color: #fff; font-size: 15px; padding: 6px 10px;     display: inline-block; }
+.risk-info .high ,.content-title .high { background-color: #d40a02; }
+.risk-info .secondary ,.content-title .secondary { background-color: #ff9a00; }
+.risk-info .low ,.content-title .low { background-color: #009a00; }
+#basic-info .W577 { width: 577px !important; }
+
+.content-title .grade { width: 30px; height: 30px; text-align: center; 
+    display: inline-block; float: right; color: #fff; font-size: 15px; position: absolute; top: 0; right: 0;
+ }
+
+
+#credit-describe .describe,#credit-eval .eval{ 
+    margin-top: 15px; line-height: 22px; text-align: justify; overflow: hidden;
+}
+#credit-eval .eval span {
+     display: inline-block;
+}
+#trade-info  table tr td{
+    padding: 0 30px;
+}
+
+
+/*信贷记录*/
+#credit-record  table tr td{
+    padding: 0 30px;
+}
+
+/*企业人员*/
+#person-status .stock-charts , #person-status .person-info {
+    width: 50%; display: inline-block; float: left;
+}
+
+
+
+
+.table-head-box { font-size: 0; }
+.table-head-box .table-head { 
+    font-size: 16px; height: 40px; line-height: 40px; display: inline-block; margin-top: 30px; background-color: #f4f4f4;
+    border: 1px solid #c8c8c8; border-bottom:0; border-radius: 3px 3px 0 0; margin-right: 2px; padding: 0 20px; 
+}
+.table-head-box .table-head:hover ,.table-head-box .on{ background-color: #fff; cursor: pointer; }
+
+
+#pay-ability .pay-chart-box , .profit-chart-box{
+    width: 50%; float: left; 
+    padding-top: 30px;
+}
+
+/*企业资质*/
+
+#qualifi-info .qualifi-info-box {
+    margin-top: 30px;  display: inline-table;
+    width: 100%;overflow: hidden;
+}
+#qualifi-info .qualifi-info-wrap {
+   float: left; width: 20%; text-align: center;
+}
+#qualifi-info .qualifi-info-wrap img {
+    width: 160px; height: 110px; 
+}
+/*企业信用评价*/
+#credit-eval .eval-details { 
+    color: #1a69eb;     float: right;
+}
+/*舆情分析*/
+#consensus-eval .positive{
+    color: #de2f26;
+}
+#consensus-eval .negative{
+    color: #2ab200;
+}
+
+
+.shadow { display: none; position: fixed; height: 100%; width: 100%; top: 0; left: 0; 
+    background-color: rgba(0,0,0,0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+ }
+.shadow .delete-box {  background-color: #fff; width: 385px;
+    height: 210px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;margin-top: 20px;
+    overflow: hidden;
+}
+.delete-box .delete-name { 
+    background-color: #d40a02; color: #fff; height: 30px; line-height: 30px; 
+    text-align: left; padding-left: 10px; font-size: 14px; position: relative;
+ }
+.delete-box .delete-name i { font-size: 0; height: 15px; width: 15px; cursor: pointer; display: inline-block; 
+    background-image: url(../../images/close.png); background-color: #fff;
+    background-repeat: no-repeat; background-position: center; border-radius: 100%; position: absolute;
+    top: 50%; margin-top: -7.5px; right: 10px;
+     }
+.delete-box .text { margin-top: 45px; font-size: 18px; color: #333; }
+.delete-box .button-box { margin-top: 45px; font-size: 0; }
+.delete-box .button-box span{ display: inline-block; height: 28px; line-height: 28px; width: 75px; 
+    border-radius: 5px; cursor: pointer; font-size: 15px;margin: 0 7px; }
+.button-box .confirm{ background-color: #ef5b4c; color: #fff; }
+.button-box .cancel{ background-color: #d2d1d1; color: #333; }
